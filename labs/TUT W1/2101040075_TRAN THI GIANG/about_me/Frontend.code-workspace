@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "../../../OneDrive/things i did/Frontend"
+		},
+		{
+			"path": "../../../OneDrive/things i did/Backend"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.live-server"
+		]
+	}
+}

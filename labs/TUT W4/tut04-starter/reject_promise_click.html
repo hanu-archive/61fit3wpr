@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejecting Promise with Button Click</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #message {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Rejecting Promise with Button Click</h1>
+    <button id="rejectBtn">Stop Countdown</button>
+    <div id="message">Promise resolved in 5 seconds</div>
+
+    <script>
+        const messageDiv = document.getElementById('message');
+        const rejectBtn = document.getElementById('rejectBtn');
+        let countdown = 5;
+        let intervalId;
+
+        const countdownPromise = new Promise((resolve, reject) => {
+           
+            intervalId = setInterval(() => {
+                messageDiv.textContent = `Promise resolved in ${countdown} seconds`;
+                countdown--;
+
+                if (countdown < 1) {
+                    clearInterval(intervalId);
+                    resolve();
+                }
+            }, 1000);
+
+            rejectBtn.addEventListener('click', () => {
+                clearInterval(intervalId);
+                reject();
+            });
+        });
+
+        countdownPromise
+            .then(() => {
+                messageDiv.textContent = "Promise has resolved";
+            })
+            .catch(() => {
+                messageDiv.textContent = "Promise has failed to resolve";
+            });
+    </script>
+</body>
+</html>

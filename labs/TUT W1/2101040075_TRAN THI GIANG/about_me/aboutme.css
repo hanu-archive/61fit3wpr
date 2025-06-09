@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h1, section h2 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* About Me Section */
+#about {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#about img {
+    border-radius: 8px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+#about div {
+    flex: 1;
+}
+
+#about p {
+    margin: 10px 0;
+}
+
+/* Achievements, Courses, Favorites, Quote, Neighbor, Contact */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+blockquote {
+    background: #f1f1f1;
+    border-left: 4px solid #007bff;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Contact Section */
+#contact a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 10px;
+}
+
+#contact i {
+    font-size: 24px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}

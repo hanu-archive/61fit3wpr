@@ -1,0 +1,27 @@
+/* Styling for the card board */
+.card-board {
+  /* display: flex; */
+  /* justify-content: space-around; */
+  align-items: center;
+  width: 80%;
+  position: relative;
+  /* left: 50%; */
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #201c1c;
+  background-color: #f0f0f0;
+  margin-top: 50px;
+}
+
+/* Default styling for the card images */
+.card-image {
+  height: 100px;
+  transition: height 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect for the cards */
+.card-image:hover {
+  filter: brightness(0.9);
+}
+

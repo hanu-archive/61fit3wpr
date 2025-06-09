@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+#outer-box {
+  padding: 50px;
+  background-color: teal;
+  box-sizing: border-box;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#inner-box {
+  border: 50px solid pink;
+  background-color: salmon;
+  width: 200px;
+  height: 200px;
+}

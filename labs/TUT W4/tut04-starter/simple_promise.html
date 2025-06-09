@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise with Then and Catch</title>
+</head>
+<body>
+
+<script>
+    const promiseOne = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('promise one is done!');
+        }, 5000); 
+    });
+
+    promiseOne
+        .then((message) => {
+            console.log(message); 
+        })
+        .catch((error) => {
+            console.log('Something went wrong:', error); 
+        });
+</script>
+
+</body>
+</html>
+
+
+<!--  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+
+<script>
+    
+    const promiseOne = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('promise one is done!');
+        }, 5000); 
+    });
+
+    
+    async function handlePromise() {
+        try {
+            const message = await promiseOne; 
+            console.log(message); 
+        } catch (error) {
+            console.log('Something went wrong:', error); 
+        }
+    }
+
+    handlePromise();
+</script>
+
+</body>
+</html>
+
+-->

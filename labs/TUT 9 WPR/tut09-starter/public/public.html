@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games List</title>
+</head>
+<body>
+    <h1>Search Games</h1>
+    <form id="gameForm">
+        <label for="genre">Genre:</label>
+        <select id="genre" name="genre"></select><br><br>
+        
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" placeholder="Enter release year"><br><br>
+
+        <button type="button" onclick="showGames()">Show Games</button>
+    </form>
+
+    <table id="gamesTable" border="1" style="margin-top: 20px;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Platform</th>
+                <th>Publisher</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        // Fetch and populate genres in the dropdown
+        fetch('/games/genres')
+        .then(response => response.json())
+        .then(data => {
+            const genreSelect = document.getElementById('genre');
+            data.forEach(genre => {
+                const option = document.createElement('option');
+                option.value = genre.id;
+                option.textContent = genre.genre_name;
+                genreSelect.appendChild(option);
+            });
+        });
+
+        // Function to fetch and display games based on the selected genre and year
+        function showGames() {
+            const genreId = document.getElementById('genre').value;
+            const year = document.getElementById('year').value;
+            fetch(`/games/list/${genreId}/${year}`)
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.querySelector('#gamesTable tbody');
+                tbody.innerHTML = '';  // Clear previous results
+                data.forEach(game => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `<td>${game.name}</td><td>${game.platform}</td><td>${game.publisher}</td>`;
+                    tbody.appendChild(row);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
