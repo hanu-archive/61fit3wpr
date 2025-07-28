@@ -1,1 +1,1 @@
-There isn't any exam btw.
+Giữa kì có dự án còn cuối kì thi giấy. Farm hết các bài Tutorial là được nhé.
